@@ -5,7 +5,7 @@ load_dotenv()
 
 openai_key = os.getenv("OPENAI_KEY")
 
-file_path = "gpt4.pdf"
+file_path = "gemini.pdf"
 
 prompt_template = """
 This is the user query that you'll have to answer:

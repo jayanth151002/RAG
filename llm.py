@@ -4,11 +4,9 @@ from constants import openai_key, prompt_template
 client = OpenAI(
     api_key=openai_key,
 )
-
-
 class Llm:
-    def get_response(self, user_query, sim_chunks):
-        chunk_string = "\n".join([f"<chunk>\n{c}\n</chunk>" for c in sim_chunks])
+    def get_response(self, user_query, sim_chunks=[]):
+        chunk_string = "\n".join(sim_chunks)
         prompt = prompt_template.format(
             user_query=user_query,
             context=chunk_string
